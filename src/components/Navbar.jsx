@@ -2,7 +2,6 @@ import { cn } from "@/lib/utils.js";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle.jsx";
-import Logo from "/public/logo.svg";
 
 const navItems = [
     { name: "Home", href: "#hero", id: "hero" },
@@ -137,7 +136,7 @@ export const Navbar = () => {
                 <div className="between">
                     <a className="text-xl font-bold text-primary flex items-center" href="#hero">
                         <div className="relative z-10 flex items-center space-x-2">
-                            <img src={Logo} alt="logo" width={36} className="mr-4" />
+                            <img src="/logo.svg" alt="logo" width={36} className="mr-4" />
                             <span className="text-glow text-foreground">Tadiwa</span>
                             <span>Kabayadondo</span>
                         </div>
@@ -182,7 +181,7 @@ export const Navbar = () => {
                         )}
                     >
                         <div className="pt-24 flex flex-col items-center justify-start h-full">
-                            <img src={Logo} alt="logo" width={64} height={64} />
+                            <img src="/logo.svg" alt="logo" width={64} height={64} />
                             <div className="flex flex-col space-y-8 text-xl mt-12">
                                 {navItems.map((item) => (
                                     <a

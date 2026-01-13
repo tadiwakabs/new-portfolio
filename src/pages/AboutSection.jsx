@@ -27,7 +27,7 @@ export const AboutSection = () => {
                                 {" "}
                                 Get in Touch
                             </a>
-                            <a href="/public/Tadiwa_Kabayadondo_Resume.pdf" target="_blank"
+                            <a href="/Tadiwa_Kabayadondo_Resume.pdf" target="_blank"
                                className="px-6 py-2 rounded-full border border-primary text-primary
                                           hover:bg-primary/10 transition-colors duration-300 max-sm:text-sm"
                             >
