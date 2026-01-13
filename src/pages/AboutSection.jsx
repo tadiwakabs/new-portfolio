@@ -22,14 +22,14 @@ export const AboutSection = () => {
                             and visually engaging.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
-                            <a href="#contact" className="cosmic-button">
+                        <div className="flex gap-4 pt-4 justify-center items-center">
+                            <a href="#contact" className="cosmic-button max-sm:text-sm">
                                 {" "}
                                 Get in Touch
                             </a>
                             <a href="/public/Tadiwa_Kabayadondo_Resume.pdf" target="_blank"
                                className="px-6 py-2 rounded-full border border-primary text-primary
-                                          hover:bg-primary/10 transition-colors duration-300"
+                                          hover:bg-primary/10 transition-colors duration-300 max-sm:text-sm"
                             >
                                 {" "}
                                 View Resume

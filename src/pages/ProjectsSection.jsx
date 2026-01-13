@@ -3,34 +3,60 @@ import {ExternalLink, ArrowRight, Github} from "lucide-react";
 const projects = [
     {
         id: 1,
-        title: "Mongi Guest House",
-        description: "A hotel booking + rewards mobile application developed using Flutter and Dart.",
+        title: "TadzzCloud",
+        description: "A fully-functioning cloud storage web application built with Next.js, React, Tailwind CSS and Appwrite.",
         image: "/projects/mongilogo.png",
-        tags: ["Flutter", "Dart", "Firebase"],
-        demoUrl: "https://apps.apple.com/us/app/mongi-guest-house/id6749555775",
-        githubUrl: "#",
+        tags: ["Next.js", "React", "Tailwind", "Appwrite"],
+        demoUrl: "https://cloud.tadzz.net",
+        githubUrl: "https://github.com/tadiwakabs/google-drive-clone",
     },
     {
         id: 2,
-        title: "Interactive Artist Website",
-        description: "Developed a responsive website using HTML, CSS and Javascript to showcase an artist, featuring" +
-            " sections for upcoming tours and discography.",
-        image: "/projects/sample2.webp",
-        tags: ["HTML", "CSS", "Javascript"],
-        demoUrl: "#",
-        githubUrl: "https://github.com/tadiwakabs/billie-fan-page",
+        title: "Mongi Guest House",
+        description: "A cross-platform hotel booking + rewards mobile application developed using Flutter and Dart.",
+        image: "/public/projects/mongi/home.PNG",
+        tags: ["Flutter", "Dart", "Firebase"],
+        demoUrl: "https://apps.apple.com/us/app/mongi-guest-house/id6749555775",
+        githubUrl: "https://github.com/tadiwakabs/mongi_app",
     },
     {
         id: 3,
+        title: "Singh's Generosity",
+        description: "A non-profit organization's web application for managing volunteers, events, and historical participation data.",
+        image: "/projects/sample1.webp",
+        tags: ["React", "Express", "MySQL"],
+        demoUrl: "#",
+        githubUrl: "https://github.com/tadiwakabs/foodbank-volunteer-app",
+    },
+    {
+        id: 4,
+        title: "Raystone Apartment Homes",
+        description: "Website for a local apartment complex built using Javascript, HTML, CSS and Tailwind.",
+        image: "/projects/mongilogo.png",
+        tags: ["Javascript", "HTML", "CSS", "Tailwind"],
+        demoUrl: "https://tadiwakabs.github.io/raystone-apts/",
+        githubUrl: "https://github.com/tadiwakabs/raystone-apts",
+    },
+    {
+        id: 5,
+        title: "84 Sea Lodge",
+        description: "Developed a website for a foreign lodge using HTML, CSS, and Javascript " +
+            "to enhance their online presence.",
+        image: "/projects/sample2.webp",
+        tags: ["HTML", "CSS", "Javascript"],
+        demoUrl: "https://www.84sealodge.com/",
+        githubUrl: "https://github.com/tadiwakabs/billie-fan-page",
+    },
+    {
+        id: 6,
         title: "Heart Disease Analysis",
-        description: "Explored and analyzed a heart disease dataset to understand the relationships between patient " +
+        description: "Explored a heart disease dataset to study the relationships between patient " +
             "attributes and the likelihood of heart attacks.",
         image: "/projects/sample1.webp",
         tags: ["Python", "NumPy", "Pandas"],
         demoUrl: "#",
         githubUrl: "#",
     }
-    // Add 3 more later, then link to GitHub (all projects)
 ]
 
 export const ProjectsSection = () => {
@@ -42,7 +68,7 @@ export const ProjectsSection = () => {
                 </h2>
 
                 <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-                    Here are some of my recent projects: {/* Add description */}
+                    Here are some of my recent projects:
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
@@ -56,7 +82,7 @@ export const ProjectsSection = () => {
                                                group-hover:scale-110"
                                 />
                             </div>
-                            <div className="p-6">
+                            <div className="p-5">
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     {project.tags.map((tag) => (
                                         <span className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary
@@ -96,7 +122,7 @@ export const ProjectsSection = () => {
                 <div className="text-center mt-12">
                     <span>and of course,
                         <a
-                            href="https://github.com/tadiwakabs/"
+                            href="https://github.com/tadiwakabs/new-portfolio"
                             className="text-primary pl-1.5"
                             target="_blank"
                         >

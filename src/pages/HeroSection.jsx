@@ -33,7 +33,7 @@ export const HeroSection = () => {
                         I build applications that solve real-world problems
                     </p>
 
-                    <div className="pt-4 opacity-0 animate-fade-in-delay-3">
+                    <div className="pt-4 opacity-0 animate-fade-in-delay-3 hover:scale-105 transition hover:duration-300">
                         <a href="#projects" className="cosmic-button">
                             View My Work
                         </a>
