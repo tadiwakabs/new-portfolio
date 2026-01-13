@@ -5,7 +5,7 @@ const projects = [
         id: 1,
         title: "TadzzCloud",
         description: "A fully-functioning cloud storage web application built with Next.js, React, Tailwind CSS and Appwrite.",
-        image: "/projects/mongilogo.png",
+        image: "/src/assets/projects/tadzzcloud/logo-new.svg",
         tags: ["Next.js", "React", "Tailwind", "Appwrite"],
         demoUrl: "https://cloud.tadzz.net",
         githubUrl: "https://github.com/tadiwakabs/google-drive-clone",
@@ -14,7 +14,7 @@ const projects = [
         id: 2,
         title: "Mongi Guest House",
         description: "A cross-platform hotel booking + rewards mobile application developed using Flutter and Dart.",
-        image: "/public/projects/mongi/home.PNG",
+        image: "/src/assets/projects/mongi/logo.png",
         tags: ["Flutter", "Dart", "Firebase"],
         demoUrl: "https://apps.apple.com/us/app/mongi-guest-house/id6749555775",
         githubUrl: "https://github.com/tadiwakabs/mongi_app",
@@ -23,7 +23,7 @@ const projects = [
         id: 3,
         title: "Singh's Generosity",
         description: "A non-profit organization's web application for managing volunteers, events, and historical participation data.",
-        image: "/projects/sample1.webp",
+        image: "/src/assets/projects/singh/logo.png",
         tags: ["React", "Express", "MySQL"],
         demoUrl: "#",
         githubUrl: "https://github.com/tadiwakabs/foodbank-volunteer-app",
@@ -32,7 +32,7 @@ const projects = [
         id: 4,
         title: "Raystone Apartment Homes",
         description: "Website for a local apartment complex built using Javascript, HTML, CSS and Tailwind.",
-        image: "/projects/mongilogo.png",
+        image: "/src/assets/projects/raystone/logo.svg",
         tags: ["Javascript", "HTML", "CSS", "Tailwind"],
         demoUrl: "https://tadiwakabs.github.io/raystone-apts/",
         githubUrl: "https://github.com/tadiwakabs/raystone-apts",
@@ -42,17 +42,17 @@ const projects = [
         title: "84 Sea Lodge",
         description: "Developed a website for a foreign lodge using HTML, CSS, and Javascript " +
             "to enhance their online presence.",
-        image: "/projects/sample2.webp",
+        image: "/src/assets/projects/sealodge/logo.svg",
         tags: ["HTML", "CSS", "Javascript"],
         demoUrl: "https://www.84sealodge.com/",
-        githubUrl: "https://github.com/tadiwakabs/billie-fan-page",
+        githubUrl: "https://github.com/tadiwakabs/84-sea-lodge",
     },
     {
         id: 6,
         title: "Heart Disease Analysis",
         description: "Explored a heart disease dataset to study the relationships between patient " +
             "attributes and the likelihood of heart attacks.",
-        image: "/projects/sample1.webp",
+        image: "/src/assets/projects/heart/heart.png",
         tags: ["Python", "NumPy", "Pandas"],
         demoUrl: "#",
         githubUrl: "#",
@@ -62,7 +62,7 @@ const projects = [
 export const ProjectsSection = () => {
     return (
         <section id="projects" className="py-24 px-4 relative">
-            <div className="container mx-auto max-w-5xl">
+            <div className="container mx-auto max-w-6xl">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
                     Featured <span className="text-primary"> Projects</span>
                 </h2>
@@ -78,12 +78,12 @@ export const ProjectsSection = () => {
                                 <img
                                     src={project.image}
                                     alt={project.title}
-                                    className="w-full h-full object-cover transition-transform duration-500
-                                               group-hover:scale-110"
+                                    className="w-full h-full object-contain transition-transform duration-500
+                                               group-hover:scale-105"
                                 />
                             </div>
                             <div className="p-5">
-                                <div className="flex flex-wrap gap-2 mb-4">
+                                <div className="flex flex-wrap gap-2 mb-4 border-t pt-2 border-border">
                                     {project.tags.map((tag) => (
                                         <span className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary
                                                  text-secondary-foreground hover:border-gray-700/60 hover:text-primary
