@@ -2,6 +2,7 @@ import {cn} from "@/lib/utils.js";
 import {useEffect, useState} from "react";
 import {Menu, X} from "lucide-react";
 import {ThemeToggle} from "@/components/ThemeToggle.jsx";
+import Logo from "/public/logo.svg";
 
 const navItems = [
     {name: "Home", href: "#hero"},
@@ -30,9 +31,10 @@ export const Navbar = () => {
         >
             <div className="between mx-12">
                 <a className="text-xl font-bold text-primary flex items-center" href="#hero">
-                <span className="relative z-10">
-                    <span className="text-glow text-foreground"> Tadiwa</span> Kabayadondo
-                </span>
+                <div className="relative z-10 flex items-center space-x-2">
+                    <img src={Logo} alt="logo" width={36} className="mr-4" />
+                    <span className="text-glow text-foreground"> Tadiwa</span><span>Kabayadondo</span>
+                </div>
                 </a>
 
                 {/* Desktop Nav */}

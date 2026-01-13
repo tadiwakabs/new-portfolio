@@ -29,6 +29,7 @@ const skills = [
     {name: "CLion", level: 70, category: "developer tools"},
     {name: "IntelliJ IDEA", level: 70, category: "developer tools"},
     {name: "WebStorm", level: 75, category: "developer tools"},
+    {name: "Appwrite", level: 80, category: "developer tools"},
     {name: "Firebase", level: 65, category: "developer tools"},
     {name: "Git", level: 75, category: "developer tools"},
     {name: "Tableau", level: 70, category: "developer tools"},
@@ -52,7 +53,8 @@ export const SkillsSection = () => {
                 <div className="flex flex-wrap justify-center gap-4 mb-12">
                     {categories.map((category, key) => (
                         <button key={key}
-                                className={cn("px-5 py-2 rounded-full transition-colors duration-300 capitalize",
+                                className={cn("px-5 py-2 rounded-full transition-colors duration-300 capitalize " +
+                                    "cursor-pointer hover:text-primary",
                                     activeCategory === category ? "bg-primary text-primary-foreground"
                                         : "bg-secondary/70 text-foreground hover:bg-secondary")}
                                 onClick={() => setActiveCategory(category)}

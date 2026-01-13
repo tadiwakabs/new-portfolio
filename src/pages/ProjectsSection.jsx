@@ -60,7 +60,9 @@ export const ProjectsSection = () => {
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     {project.tags.map((tag) => (
                                         <span className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary
-                                                         text-secondary-foreground">{tag}</span>
+                                                 text-secondary-foreground hover:border-gray-700/60 hover:text-primary
+                                                 dark:hover:border-gray-100/60 transition-colors duration-300 "
+                                        >{tag}</span>
                                     ))}
                                 </div>
 
