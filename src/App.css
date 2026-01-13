@@ -1,0 +1,267 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+@plugin "tailwindcss-animate";
+
+@theme {
+    --color-border: hsl(var(--border));
+    --color-background: hsl(var(--background));
+    --color-foreground: hsl(var(--foreground));
+
+    --color-primary: hsl(var(--primary));
+    --color-primary-foreground: hsl(var(--primary-foreground));
+
+    --color-card: hsl(var(--card));
+
+    --animate-float: float 6s ease-in-out infinite;
+    --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
+    --animate-fade-in: fade-in 0.7s ease-out forwards;
+    --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
+    --animate-fade-in-delay-2: fade-in 0.7s ease-in 0.4s forwards;
+    --animate-fade-in-delay-3: fade-in 0.7s ease-in 0.6s forwards;
+    --animate-fade-in-delay-4: fade-in 0.7s ease-in 0.8s forwards;
+    --animate-meteor: meteor 5s linear infinite;
+
+
+    @keyframes float {
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+    @keyframes pulse-subtle {
+        0%,
+        100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.8;
+        }
+    }
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+@layer base {
+    :root {
+        --background: 210 40% 98%;
+        --foreground: 222 47% 11%;
+
+        --card: 0 0% 100%;
+
+        --primary: 250 47% 60%;
+        --primary-foreground: 210 40% 98%;
+
+        --border: 214 32% 91%;
+    }
+
+    .dark {
+        --background: 222 47% 4%;
+        --foreground: 213 31% 91%;
+
+        --card: 222 47% 8%;
+
+        --primary: 250 65% 65%;
+        --primary-foreground: 213 31% 91%;
+
+        --border: 217 33% 20%;
+    }
+
+    * {
+        @apply border-border;
+    }
+
+    html {
+        @apply scroll-smooth;
+    }
+
+    body {
+        @apply bg-background text-foreground transition-colors duration-300;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+}
+
+/* ===== Typography */
+@utility h1 {
+    @apply text-[34px] leading-[42px] font-bold;
+}
+
+@utility h2 {
+    @apply text-[24px] leading-[36px] font-bold;
+}
+
+@utility h3 {
+    @apply text-[20px] leading-[28px] font-semibold;
+}
+
+@utility h4 {
+    @apply text-[18px] leading-[20px] font-medium;
+}
+
+@utility h5 {
+    @apply text-[16px] leading-[24px] font-semibold;
+}
+
+@utility subtitle-1 {
+    @apply text-[16px] leading-[24px] font-medium;
+}
+
+@utility subtitle-2 {
+    @apply text-[14px] leading-[20px] font-semibold;
+}
+
+@utility body-1 {
+    @apply text-[16px] leading-[24px] font-normal;
+}
+
+@utility body-2 {
+    @apply text-[14px] leading-[20px] font-normal;
+}
+
+@utility button {
+    @apply text-[14px] leading-[20px] font-medium;
+}
+
+@utility caption {
+    @apply text-[12px] leading-[16px] font-normal;
+}
+
+@utility overline {
+    @apply text-[10px] leading-[14px] font-normal;
+}
+
+@utility shadow-drop-1 {
+    box-shadow: 0 10px 30px 0 rgba(66, 71, 97, 0.1);
+}
+
+@utility shadow-drop-2 {
+    box-shadow: 0 8px 30px 0 rgba(65, 89, 214, 0.3);
+}
+
+@utility shadow-drop-3 {
+    box-shadow: 0 8px 30px 0 rgba(65, 89, 214, 0.1);
+}
+
+/* ===== Helper Classes */
+@utility container {
+    margin-inline: auto;
+    padding-inline: 2rem;
+
+    @media (width >= 640px) {
+        max-width: 640px;
+    }
+    @media (width >= 768px) {
+        max-width: 768px;
+    }
+    @media (width >= 1024px) {
+        max-width: 1024px;
+    }
+    @media (width >= 1280px) {
+        max-width: 1280px;
+    }
+    @media (width >= 1400px) {
+        max-width: 1400px;
+    }
+}
+
+@utility text-glow {
+    @apply relative;
+    text-shadow: 0 0 10px rgba(167, 139, 250, .5);
+}
+
+@utility card-hover {
+    @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
+    text-shadow: 0 0 10px rgba(167, 139, 250, .5);
+}
+
+@utility gradient-border {
+    @apply relative rounded-md;
+    background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
+    background-clip: padding-box;
+    border: 1px solid transparent;
+}
+
+@utility cosmic-button {
+    @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium
+    transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,246,.5)]
+    hover:scale-105 active:scale-95;
+}
+
+@utility center {
+    @apply flex justify-center items-center;
+}
+
+@utility between {
+    @apply flex justify-between items-center;
+}
+
+@utility around {
+    @apply flex justify-around items-center;
+}
+
+@utility left {
+    @apply flex justify-start items-center;
+}
+
+@utility right {
+    @apply flex justify-end items-center;
+}
+
+@utility text-10 {
+    @apply text-[10px] leading-[14px];
+}
+
+@utility text-12 {
+    @apply text-[12px] leading-[16px];
+}
+
+@utility text-14 {
+    @apply text-[14px] leading-[20px];
+}
+
+@utility text-16 {
+    @apply text-[16px] leading-[24px];
+}
+
+@utility text-18 {
+    @apply text-[18px] leading-[22px];
+}
+
+@utility text-20 {
+    @apply text-[20px] leading-[24px];
+}
+
+@utility text-24 {
+    @apply text-[24px] leading-[30px];
+}
+
+@utility text-26 {
+    @apply text-[26px] leading-[32px];
+}
+
+@utility text-30 {
+    @apply text-[30px] leading-[38px];
+}
+
+@utility text-36 {
+    @apply text-[36px] leading-[44px];
+}
+
+@layer utilities {
+
+}
+
+.animate-bounce {
+    animation: var(--animate-bounce) /* bounce 1s infinite */;
+}
