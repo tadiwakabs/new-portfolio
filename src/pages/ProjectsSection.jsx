@@ -8,7 +8,7 @@ const projects = [
         image: "projects/tadzzcloud/logo-new.svg",
         tags: ["Next.js", "React", "Tailwind", "Appwrite"],
         demoUrl: "https://cloud.tadzz.net",
-        githubUrl: "https://github.com/tadiwakabs/google-drive-clone",
+        githubUrl: "#",
     },
     {
         id: 2,
@@ -25,7 +25,7 @@ const projects = [
         description: "A non-profit organization's web application for managing volunteers, events, and historical participation data.",
         image: "projects/singh/logo.png",
         tags: ["React", "Express", "MySQL"],
-        demoUrl: "#",
+        demoUrl: "",
         githubUrl: "https://github.com/tadiwakabs/foodbank-volunteer-app",
     },
     {
@@ -43,7 +43,7 @@ const projects = [
         description: "Developed a website for a foreign lodge using HTML, CSS, and Javascript " +
             "to enhance their online presence.",
         image: "projects/sealodge/logo.svg",
-        tags: ["HTML", "CSS", "Javascript"],
+        tags: ["HTML", "CSS", "Javascript", "Tailwind"],
         demoUrl: "https://www.84sealodge.com/",
         githubUrl: "https://github.com/tadiwakabs/84-sea-lodge",
     },
@@ -96,22 +96,28 @@ export const ProjectsSection = () => {
                                 <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
                                 <div className="flex justify-between items-center">
                                     <div className="flex space-x-3 items-center justify-center w-full">
-                                        <a
-                                            href={project.demoUrl}
-                                            target="_blank"
-                                            className="text-foreground/80 hover:text-primary
+                                        {project.demoUrl !== "#" && (
+                                            <a
+                                                href={project.demoUrl}
+                                                target="_blank"
+                                                className="text-foreground/80 hover:text-primary
                                                        transition-colors duration-300 mx-5"
-                                        >
-                                            <ExternalLink size={20}/>
-                                        </a>
-                                        <a
-                                            href={project.githubUrl}
-                                            target="_blank"
-                                            className="text-foreground/80 hover:text-primary
+                                            >
+                                                <ExternalLink size={20}/>
+                                            </a>
+                                        )}
+
+                                        {project.githubUrl !== "#" && (
+                                            <a
+                                                href={project.githubUrl}
+                                                target="_blank"
+                                                className="text-foreground/80 hover:text-primary
                                                        transition-colors duration-300 mx-5"
-                                        >
-                                            <Github size={20}/>
-                                        </a>
+                                            >
+                                                <Github size={20}/>
+                                            </a>
+                                        )}
+
                                     </div>
                                 </div>
                             </div>
