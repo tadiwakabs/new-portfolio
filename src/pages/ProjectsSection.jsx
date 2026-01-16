@@ -25,7 +25,7 @@ const projects = [
         description: "A non-profit organization's web application for managing volunteers, events, and historical participation data.",
         image: "projects/singh/logo.png",
         tags: ["React", "Express", "MySQL"],
-        demoUrl: "",
+        demoUrl: "#",
         githubUrl: "https://github.com/tadiwakabs/foodbank-volunteer-app",
     },
     {
