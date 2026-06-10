@@ -1,62 +1,83 @@
 import {ExternalLink, ArrowRight, Github} from "lucide-react";
+import { FaApple, FaGooglePlay } from "react-icons/fa";
 
 const projects = [
     {
         id: 1,
+        title: "Divided Airlines",
+        description: "A full-stack airline reservation and management system built with ASP.NET, React, MySQL, and C#.",
+        image: "projects/airline/logo.png",
+        tags: ["ASP.NET", "React", "MySQL", "C#"],
+        links: {
+            website: "https://airline.tadzz.net"
+        },
+        githubUrl: "https://github.com/tadiwakabs/airline-system",
+    },
+    {
+        id: 2,
         title: "TadzzCloud",
         description: "A fully-functioning cloud storage web application built with Next.js, React, Tailwind CSS and Appwrite.",
         image: "projects/tadzzcloud/logo-new.svg",
         tags: ["Next.js", "React", "Tailwind", "Appwrite"],
-        demoUrl: "https://cloud.tadzz.net",
+        links: {
+            website: "https://cloud.tadzz.net"
+        },
         githubUrl: "#",
     },
     {
-        id: 2,
+        id: 3,
         title: "Mongi Guest House",
         description: "A cross-platform hotel booking + rewards mobile application developed using Flutter and Dart.",
         image: "projects/mongi/logo.png",
         tags: ["Flutter", "Dart", "Firebase"],
-        demoUrl: "https://apps.apple.com/us/app/mongi-guest-house/id6749555775",
-        githubUrl: "https://github.com/tadiwakabs/mongi_app",
+        links: {
+            website: "https://mongilodge.com",
+            appStore: "https://apps.apple.com/us/app/mongi-guest-house/id6749555775",
+            playStore: "https://play.google.com/store/apps/details?id=com.mongi.GuestHouse"
+        },
+        githubUrl: "#",
     },
     {
-        id: 3,
+        id: 4,
         title: "Singh's Generosity",
         description: "A non-profit organization's web application for managing volunteers, events, and historical participation data.",
         image: "projects/singh/logo.png",
         tags: ["React", "Express", "MySQL"],
-        demoUrl: "#",
+        links: {},
         githubUrl: "https://github.com/tadiwakabs/foodbank-volunteer-app",
     },
     {
-        id: 4,
+        id: 5,
         title: "Raystone Apartment Homes",
         description: "Website for a local apartment complex built using Javascript, HTML, CSS and Tailwind.",
         image: "projects/raystone/logo.svg",
         tags: ["Javascript", "HTML", "CSS", "Tailwind"],
-        demoUrl: "https://tadiwakabs.github.io/raystone-apts/",
+        links: {
+            website: "https://tadiwakabs.github.io/raystone-apts/"
+        },
         githubUrl: "https://github.com/tadiwakabs/raystone-apts",
     },
     {
-        id: 5,
+        id: 6,
         title: "84 Sea Lodge",
-        description: "Developed a website for a foreign lodge using HTML, CSS, and Javascript " +
-            "to enhance their online presence.",
+        description: "Developed a website for a foreign lodge using HTML, CSS, and Javascript to enhance their online presence.",
         image: "projects/sealodge/logo.svg",
         tags: ["HTML", "CSS", "Javascript", "Tailwind"],
-        demoUrl: "https://www.84sealodge.com/",
+        links: {
+            website: "https://www.84sealodge.com/"
+        },
         githubUrl: "https://github.com/tadiwakabs/84-sea-lodge",
     },
-    {
-        id: 6,
-        title: "Heart Disease Analysis",
-        description: "Explored a heart disease dataset to study the relationships between patient " +
-            "attributes and the likelihood of heart attacks.",
-        image: "projects/heart/heart.png",
-        tags: ["Python", "NumPy", "Pandas"],
-        demoUrl: "#",
-        githubUrl: "#",
-    }
+     {
+         id: 7,
+         title: "Heart Disease Analysis",
+         description: "Explored a heart disease dataset to study the relationships between patient " +
+             "attributes and the likelihood of heart attacks.",
+         image: "projects/heart/heart.png",
+         tags: ["Python", "NumPy", "Pandas"],
+         demoUrl: "#",
+         githubUrl: "#",
+     }
 ]
 
 export const ProjectsSection = () => {
@@ -95,15 +116,34 @@ export const ProjectsSection = () => {
                                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                                 <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
                                 <div className="flex justify-between items-center">
-                                    <div className="flex space-x-3 items-center justify-center w-full">
-                                        {project.demoUrl !== "#" && (
+                                    <div className="flex items-center justify-center gap-5 w-full">
+                                        {project.links?.website && (
                                             <a
-                                                href={project.demoUrl}
+                                                href={project.links.website}
                                                 target="_blank"
-                                                className="text-foreground/80 hover:text-primary
-                                                       transition-colors duration-300 mx-5"
+                                                className="text-foreground/80 hover:text-primary transition-colors duration-300"
                                             >
-                                                <ExternalLink size={20}/>
+                                                <ExternalLink size={20} />
+                                            </a>
+                                        )}
+
+                                        {project.links?.appStore && (
+                                            <a
+                                                href={project.links.appStore}
+                                                target="_blank"
+                                                className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                                            >
+                                                <FaApple size={20} />
+                                            </a>
+                                        )}
+
+                                        {project.links?.playStore && (
+                                            <a
+                                                href={project.links.playStore}
+                                                target="_blank"
+                                                className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                                            >
+                                                <FaGooglePlay size={20} />
                                             </a>
                                         )}
 
@@ -112,7 +152,7 @@ export const ProjectsSection = () => {
                                                 href={project.githubUrl}
                                                 target="_blank"
                                                 className="text-foreground/80 hover:text-primary
-                                                       transition-colors duration-300 mx-5"
+                                                       transition-colors duration-300"
                                             >
                                                 <Github size={20}/>
                                             </a>

@@ -13,7 +13,7 @@ export const AboutSection = () => {
                     <div className="space-y-6">
                         <h3 className="text-2xl font-semibold max-md:text-center"> Software Engineer </h3>
                         <p className="text-muted-foreground">
-                            I am a computer science student at the University of Houston who enjoys building software
+                            I am a computer science graduate from the University of Houston who enjoys building software
                             applications that solve real-world problems and make everyday tasks easier.
                         </p>
                         <p className="text-muted-foreground">
@@ -47,10 +47,10 @@ export const AboutSection = () => {
                                 </div>
                                 <div className="text-left">
                                     <h4 className="font-semibold text-lg">
-                                        Front End Developer
+                                        Full Stack Developer
                                     </h4>
                                     <p className="text-muted-foreground">
-                                        Experienced in crafting responsive interfaces using HTML, CSS, JavaScript, and React.
+                                        Experienced in developing scalable full-stack applications, from responsive user interfaces to backend APIs and database systems.
                                     </p>
                                 </div>
                             </div>
