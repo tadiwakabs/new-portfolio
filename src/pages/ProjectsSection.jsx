@@ -1,4 +1,4 @@
-import {ExternalLink, ArrowRight, Github} from "lucide-react";
+import { ExternalLink, ArrowRight, Github } from "lucide-react";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
 
 const projects = [
@@ -68,17 +68,16 @@ const projects = [
         },
         githubUrl: "https://github.com/tadiwakabs/84-sea-lodge",
     },
-     {
-         id: 7,
-         title: "Heart Disease Analysis",
-         description: "Explored a heart disease dataset to study the relationships between patient " +
-             "attributes and the likelihood of heart attacks.",
-         image: "projects/heart/heart.png",
-         tags: ["Python", "NumPy", "Pandas"],
-         demoUrl: "#",
-         githubUrl: "#",
-     }
-]
+    {
+        id: 7,
+        title: "Heart Disease Analysis",
+        description: "Explored a heart disease dataset to study the relationships between patient attributes and the likelihood of heart attacks.",
+        image: "projects/heart/heart.png",
+        tags: ["Python", "NumPy", "Pandas"],
+        links: {},
+        githubUrl: "#",
+    }
+];
 
 export const ProjectsSection = () => {
     return (
@@ -92,35 +91,51 @@ export const ProjectsSection = () => {
                     Here are some of my recent projects:
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
-                    {projects.map((project, key) => (
-                        <div key={key} className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {projects.map((project, index) => (
+                        <div
+                            key={project.id}
+                            className={`group bg-card rounded-lg overflow-hidden shadow-xs card-hover ${
+                                projects.length % 3 === 1 && index === projects.length - 1
+                                    ? "lg:col-start-2"
+                                    : ""
+                            }`}
+                        >
                             <div className="h-48 overflow-hidden">
                                 <img
                                     src={project.image}
                                     alt={project.title}
-                                    className="w-full h-full object-contain transition-transform duration-500
-                                               group-hover:scale-105"
+                                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                                 />
                             </div>
+
                             <div className="p-5">
                                 <div className="flex flex-wrap gap-2 mb-4 border-t pt-2 border-border">
                                     {project.tags.map((tag) => (
-                                        <span className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary
-                                                 text-secondary-foreground hover:border-gray-700/60 hover:text-primary
-                                                 dark:hover:border-gray-100/60 transition-colors duration-300 "
-                                        >{tag}</span>
+                                        <span
+                                            key={tag}
+                                            className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground hover:border-gray-700/60 hover:text-primary dark:hover:border-gray-100/60 transition-colors duration-300"
+                                        >
+                                            {tag}
+                                        </span>
                                     ))}
                                 </div>
 
-                                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                                <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
+                                <h3 className="text-xl font-semibold mb-2">
+                                    {project.title}
+                                </h3>
+
+                                <p className="text-muted-foreground text-sm mb-4">
+                                    {project.description}
+                                </p>
+
                                 <div className="flex justify-between items-center">
                                     <div className="flex items-center justify-center gap-5 w-full">
                                         {project.links?.website && (
                                             <a
                                                 href={project.links.website}
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 className="text-foreground/80 hover:text-primary transition-colors duration-300"
                                             >
                                                 <ExternalLink size={20} />
@@ -131,6 +146,7 @@ export const ProjectsSection = () => {
                                             <a
                                                 href={project.links.appStore}
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 className="text-foreground/80 hover:text-primary transition-colors duration-300"
                                             >
                                                 <FaApple size={20} />
@@ -141,6 +157,7 @@ export const ProjectsSection = () => {
                                             <a
                                                 href={project.links.playStore}
                                                 target="_blank"
+                                                rel="noopener noreferrer"
                                                 className="text-foreground/80 hover:text-primary transition-colors duration-300"
                                             >
                                                 <FaGooglePlay size={20} />
@@ -151,13 +168,12 @@ export const ProjectsSection = () => {
                                             <a
                                                 href={project.githubUrl}
                                                 target="_blank"
-                                                className="text-foreground/80 hover:text-primary
-                                                       transition-colors duration-300"
+                                                rel="noopener noreferrer"
+                                                className="text-foreground/80 hover:text-primary transition-colors duration-300"
                                             >
-                                                <Github size={20}/>
+                                                <Github size={20} />
                                             </a>
                                         )}
-
                                     </div>
                                 </div>
                             </div>
@@ -166,24 +182,28 @@ export const ProjectsSection = () => {
                 </div>
 
                 <div className="text-center mt-12">
-                    <span>and of course,
+                    <span>
+                        and of course,
                         <a
                             href="https://github.com/tadiwakabs/new-portfolio"
                             className="text-primary pl-1.5"
                             target="_blank"
+                            rel="noopener noreferrer"
                         >
                             this website
-                        </a>!
+                        </a>
+                        !
                     </span>
+
                     <a
                         className="cosmic-button w-fit flex items-center mx-auto my-6 gap-2"
                         href="https://www.github.com/tadiwakabs"
                         target="_blank"
+                        rel="noopener noreferrer"
                     >
                         Check out my GitHub <ArrowRight size={16} />
                     </a>
                 </div>
-
             </div>
         </section>
     );
